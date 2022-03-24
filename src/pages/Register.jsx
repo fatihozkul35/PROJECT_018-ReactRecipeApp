@@ -1,31 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
 import { TextField, Button } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
-import { regisMain } from "../styles/styles";
+import { FormStyles, regisMain, styleImg } from "../styles/styles";
+import signInImg from "../assets/meal2.svg";
 
-const register = () => {
+const Register = () => {
+  const [user, setUser] = useState({ firstName: "", lastName: "" });
+  const handleUser = (e) => {
+    setUser({ ...user, [e.target.name]: e.target.value });
+  };
   return (
     <div style={regisMain}>
-      <form
-        style={{
-          ...regisMain,
-          width: "50%",
-          height: "50%",
-          border: "1px solid red",
-          borderRadius: "50%",
-          padding: "10px",
-        }}
-      >
-        {" "}
-        <img src="../assets/meal2.svg" alt="here is a icon" />
-        <TextField id="outlined-basic" label="Outlined" variant="outlined" />
-        <TextField id="outlined-basic" label="Outlined" variant="outlined" />
-        <Button variant="contained" endIcon={<SendIcon />}>
+      <h1>Recipe Project With Fatih</h1>
+      <FormStyles spacing={5}>
+        <img style={styleImg} src={signInImg} alt="here is a logo" />
+        <TextField
+          id="outlined-basic"
+          name="firstName"
+          label="Username"
+          variant="outlined"
+          size="small"
+          onChange={handleUser}
+          required
+        />
+        <TextField
+          id="outlined-basic"
+          name="lastName"
+          label="password"
+          variant="outlined"
+          size="small"
+          onChange={handleUser}
+          required
+        />
+        <Button type="submit" variant="contained" endIcon={<SendIcon />}>
           Send
         </Button>
-      </form>
+      </FormStyles>
     </div>
   );
 };
 
-export default register;
+export default Register;

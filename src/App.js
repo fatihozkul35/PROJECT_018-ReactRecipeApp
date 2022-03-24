@@ -1,9 +1,11 @@
 import "./App.css";
-import Register from "./pages/Register";
+import Main from "./components/recipe/Main";
+// import Register from "./pages/Register";
 function App() {
   return (
     <div className="App">
-      <Register />
+      {/* <Register /> */}
+      <Main />
     </div>
   );
 }
