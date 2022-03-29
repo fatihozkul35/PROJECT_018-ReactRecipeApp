@@ -1,11 +1,10 @@
 import "./App.css";
-import Main from "./components/recipe/Main";
-// import Register from "./pages/Register";
+import AppRouter from "./router/AppRouter";
+
 function App() {
   return (
     <div className="App">
-      {/* <Register /> */}
-      <Main />
+      <AppRouter />
     </div>
   );
 }
