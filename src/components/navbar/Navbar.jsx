@@ -19,6 +19,7 @@ const Navbar = () => {
       <NavbarOptions>
         <Link to="/">Home</Link>
         <Link to="/about">About</Link>
+        <Link to="/register">Register</Link>
         <Link to="/login">Loginout</Link>
       </NavbarOptions>
     </Bar>
