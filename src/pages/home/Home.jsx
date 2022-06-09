@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import Header from "../../components/header/Header";
 import Cards from "../../components/cards/Cards";
+import { HeaderContainer } from "../../components/header/HeaderStyles";
 
 const Home = () => {
   const [query, setQuery] = useState("");
@@ -25,7 +26,7 @@ const Home = () => {
   };
 
   return (
-    <div>
+    <HeaderContainer>
       <Header
         query={query}
         setQuery={setQuery}
@@ -35,7 +36,7 @@ const Home = () => {
       />
 
       <Cards recipes={recipes}></Cards>
-    </div>
+    </HeaderContainer>
   );
 };
 
