@@ -19,9 +19,8 @@ const Home = () => {
     if (query) {
       const result = await axios.get(url);
       setRecipes(result.data.hits);
-      console.log(result.data);
     } else {
-      console.log("please enter your meal");
+      alert("please enter your meal");
     }
   };
 
